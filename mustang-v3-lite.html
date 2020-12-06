@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<!--
+    Author:  Eric Pogue
+    Class:   Web & Distributed Programming 
+    Project: Mustang v3 Lite
+    Session: su18-cpsc-24700-lt1
+    Description: This application is intended to be a reference implementatin for Mustang V2.
+-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Mustang v3 Lite</title>
+        <link rel="stylesheet" href="mustang-v3-lite.css">
+        <script src="mustang-v3-lite.js"></script>
+    </head>
+    <body onload="initApplication()">
+    <div>
+        <h1>Mustang v3 Lite</h1> 
+            <button type="button" onclick="importContacts()">Import Contacts</button><br><br>
+            <button type="button" onclick="saveContactsToServer()">Save Contacts</button>
+            <button type="button" onclick="loadContactsFromServer()">Load Contacts</button>
+            <button type="button" onclick="logContacts()">Log Contacts</button>
+            <br><br>
+
+            <table>
+               <table>
+            <tr>
+                <td>Name:</td>
+                <td> 
+                    <input id="nameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input id="emailID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td>
+                    <input id="zipID" type="text" value="" size="20" onfocus="zipFocusFunction()" onblur="zipBlurFunction()">
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input id="cityID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()">
+                </td>
+            </tr>
+        
+            <tr>
+                <td><button type="button" id="prev" onclick="previous()">Previous</button></td>
+                <td><button type="button" id="next" autofocus onclick="next()">Next</button>
+                </td>
+            <tr>
+                <td><button type="button" onclick="add()">New</button></td>
+                <td><button type="button" onclick="remove()">Delete</button>
+            </td>
+            </tr>
+        </table>
+
+        <p id="statusID"></p>
+        <br><br><hr>
+        Data and Test Functions:<br>
+        Index:<p id="indexID"></p>
+        Contacts:<p id="contactsID"></p>
+
+    <script>
+        autocomplete(document.getElementById("myInput"), zipArray);
+        autocomplete(document.getElementById("myInput"), cityArray);
+    </script>
+    </div>
+    </body>
+</html>
